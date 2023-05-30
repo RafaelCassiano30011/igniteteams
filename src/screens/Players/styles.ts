@@ -14,4 +14,5 @@ export const Form = styled.View`
   justify-content: space-between;
   background-color: ${({ theme }) => theme.colors.gray_700};
   border-radius: 6px;
+  margin-bottom: 32px;
 `;

@@ -18,7 +18,7 @@ export default function Players() {
         <Input autoCorrect={false} placeholder="Nome do participante" />
         <ButtonIcon icon="add" />
       </S.Form>
-      <Filter />
+      <Filter title="TIME A dsde" isActive={true} />
     </S.Container>
   );
 }
