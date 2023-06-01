@@ -11,7 +11,7 @@ export const Title = styled.Text`
   text-align: center;
   ${({ theme }) => css`
     font-size: ${theme.font_size.xl}px;
-    font-weight: ${theme.font_family.bold};
+    font-family: ${theme.font_family.bold};
     color: ${theme.colors.white};
   `}
 `;
@@ -20,7 +20,7 @@ export const Subtitle = styled.Text`
   text-align: center;
   ${({ theme }) => css`
     font-size: ${theme.font_size.md}px;
-    font-weight: ${theme.font_family.regular};
+    font-family: ${theme.font_family.regular};
     color: ${theme.colors.gray_300};
   `}
 `;
