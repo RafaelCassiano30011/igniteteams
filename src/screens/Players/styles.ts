@@ -28,6 +28,6 @@ export const NumberOfPLayers = styled.Text`
   ${({ theme }) => css`
     color: ${theme.colors.gray_200};
     font-family: ${theme.font_family.bold};
-    font-size: ${theme.font_size.sm};
+    font-size: ${theme.font_size.sm}px;
   `}
 `;

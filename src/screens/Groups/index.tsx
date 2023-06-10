@@ -1,6 +1,8 @@
 /** @format */
 
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { useNavigation } from "@react-navigation/native";
+
 import * as S from "./styles";
 import Header from "@components/Header";
 import Highlight from "@components/Highlight";
@@ -11,6 +13,12 @@ import Button from "@components/Button";
 
 export function Groups() {
   const [groups, setGroups] = useState<string[]>([]);
+
+  const navegation = useNavigation();
+
+  const handleNewGroup = () => {
+    navegation.navigate("new");
+  };s
 
   return (
     <S.Container>
@@ -26,7 +34,7 @@ export function Groups() {
         ListEmptyComponent={() => <ListEmpty message="Que tal cadastrar a primeira turma" />}
       />
 
-      <Button title="Criar nova turma" />
+      <Button onPress={handleNewGroup} title="Criar nova turma" />
     </S.Container>
   );
 }
