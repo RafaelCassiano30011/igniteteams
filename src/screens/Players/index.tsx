@@ -60,5 +60,5 @@ export default function Players() {
 
       <Button title="Remover Turma" type="secondary"></Button>
     </S.Container>
-  );
+  ); 
 }

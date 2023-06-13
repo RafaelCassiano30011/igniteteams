@@ -18,7 +18,7 @@ export function Groups() {
 
   const handleNewGroup = () => {
     navegation.navigate("new");
-  };s
+  };
 
   return (
     <S.Container>
