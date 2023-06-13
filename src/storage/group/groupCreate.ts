@@ -3,7 +3,7 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { GROUP_COLLECTION } from "@storage/storageConfig";
 import { groupsGetAll } from "./gruupsGetAll";
-import NewGroup from "@screens/NewGroup";
+import { AppError } from "@utils/AppError";
 
 export async function groupCreate(newGroup: string) {
   try {
@@ -12,7 +12,7 @@ export async function groupCreate(newGroup: string) {
     const groupAlreadyExist = groups.includes(newGroup);
 
     if (groupAlreadyExist) {
-      throw new Error("Group already exist");
+      throw new AppError("O grupo ja existe");
     }
 
     const newGroups = JSON.stringify([...groups, newGroup]);

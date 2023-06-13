@@ -15,10 +15,10 @@ import { groupsGetAll } from "@storage/group/gruupsGetAll";
 export function Groups() {
   const [groups, setGroups] = useState<string[]>([]);
 
-  const navegation = useNavigation();
+  const navigation = useNavigation();
 
   const handleNewGroup = () => {
-    navegation.navigate("new");
+    navigation.navigate("new");
   };
 
   useFocusEffect(
@@ -37,6 +37,12 @@ export function Groups() {
     }
   }
 
+  const handleOpenGroup = (group: string) => {
+    navigation.navigate("players", {
+      group: group,
+    });
+  };
+
   return (
     <S.Container>
       <Header />
@@ -44,7 +50,7 @@ export function Groups() {
 
       <FlatList
         data={groups}
-        renderItem={({ item }) => <GroupCard title={item} />}
+        renderItem={({ item }) => <GroupCard onPress={() => handleOpenGroup(item)} title={item} />}
         keyExtractor={(item) => item}
         contentContainerStyle={groups.length === 0 && { flex: 1 }}
         showsVerticalScrollIndicator={false}
